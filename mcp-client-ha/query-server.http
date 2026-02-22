@@ -1,0 +1,18 @@
+###
+# curl -H "Content-Type: application/json"      -X POST http://localhost:8081/ask      -d '{"question":"How will the weather be in Kempten next weekend?"}'
+POST http://localhost:8081/api/ask
+Content-Type: application/json
+
+{
+  "question": "How should I adjust my heating?"
+}
+
+###
+# curl -H "Content-Type: application/json"      -X POST http://localhost:8081/ask      -d '{"question":"How will the weather be in Kempten next weekend?"}'
+POST http://localhost:8081/api/ask
+Content-Type: application/json
+
+{
+  "question": "Should I open the windows? I'm feeling a bit dizzy! Do I need a doctor!"
+}
+

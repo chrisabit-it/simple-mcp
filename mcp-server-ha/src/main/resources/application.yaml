@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: mcp-server-ha
+  ai:
+    mcp:
+      server:
+        name: server-ha
+        version: 0.0.1
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info,mappings
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  file:
+    name: ./target/starter-webmvc-server.log
