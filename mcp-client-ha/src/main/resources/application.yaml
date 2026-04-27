@@ -2,6 +2,27 @@ spring:
   application:
     name: mcp-client-ha
   ai:
+    mcp:
+      client:
+        sse:
+          connections:
+            ha:
+              url: http://localhost:8080
+
+server:
+  port: 8081
+
+logging:
+  level:
+    io.modelcontextprotocol.spec.McpClientSession: DEBUG
+    org.springframework.ai.chat.client.advisor: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: ollama-local
+  ai:
     ollama:
       base-url: http://localhost:11434
       chat:
@@ -10,6 +31,18 @@ spring:
           temperature: 0.7
           top-p: 0.9
           num-predict: 2048
+---
+spring:
+  config:
+    activate:
+      on-profile: ollama-cloud
+  ai:
+    openai:
+      api-key: ${OLLAMA_API_KEY}
+      base-url: https://ollama.com/
+      chat:
+        options:
+          model: glm-5.1:cloud
     mcp:
       client:
         sse:
