@@ -8,11 +8,12 @@ Content-Type: application/json
 }
 
 ###
-# curl -H "Content-Type: application/json"      -X POST http://localhost:8081/api/ask      -d '{"question":"Should I open the windows? I'm feeling a bit dizzy! Do I need a doctor?"}'
+
+# curl -H "Content-Type: application/json"      -X POST http://localhost:8081/api/ask      -d '{"question":"Should I open the windows? I am feeling a bit dizzy! Do I need a doctor?"}'
 POST http://localhost:8081/api/ask
 Content-Type: application/json
 
 {
-  "question": "Should I open the windows? I'm feeling a bit dizzy! Do I need a doctor?"
+  "question": "Should I open the windows? I am feeling a bit dizzy! Do I need a doctor?"
 }
 

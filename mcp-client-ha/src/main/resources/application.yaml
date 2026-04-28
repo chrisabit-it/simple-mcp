@@ -42,8 +42,10 @@ spring:
       base-url: https://ollama.com/
       chat:
         options:
-          model: glm-5.1:cloud
-    mcp:
+          model: gpt-oss:20b-cloud
+          temperature: 1.5          # Maximal hochsetzen für maximale Entropie
+          top-p: 1.0                # Keine Filterung durch Nucleus Sampling
+          max-tokens: 2048         # OpenAI nutzt max-tokens statt num-predict    mcp:
       client:
         sse:
           connections:
